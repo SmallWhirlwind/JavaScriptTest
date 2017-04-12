@@ -2,18 +2,20 @@
  * Created by haoyuze on 2017/4/12.
  */
 'use strict';
-xdescribe("test input date is legal", function() {
-    it("should throw an exception when inputDate like 2008-4-30 ", function() {
-        const date = "2008-4-30"
-        let bar = main("2008-4-30");
-        expect(bar).toThrow();
+describe("test input date is validity", function() {
+    it("should console 'Date not validity' when inputDate like 2008-2-30 ", function() {
+        spyOn(console, 'log');
+        const date = [2008,2,30];
+        checkvalidity(date,true);
+        expect(console.log).toHaveBeenCalledWith('Date not validity');
     });
 });
-xdescribe("test unify date format", function() {
-    xit("should throw an exception when inputDate like 2008&5&15 ", function() {
+describe("test unify date format", function() {
+    it("should console 'Date Format errors' when inputDate like 2008&5&15 ", function() {
+        spyOn(console, 'log');
         const date = "2008&5&15"
-        let bar = getUnifiedDateFormat("2008&5&15");
-        expect(bar).toThrow();
+        getUnifiedDateFormat("2008&5&15");
+        expect(console.log).toHaveBeenCalledWith('Date Format errors');
     });
 });
 describe("test compare date order", function() {
@@ -22,6 +24,13 @@ describe("test compare date order", function() {
         const inputDate = [2006,5,15]
         let bar = compareOrder(systemDate,inputDate);
         expect(bar).toBe("greatThan");
+    });
+});
+describe("test date Leap Year", function() {
+    it("should return an true when input  [2000,5,15]", function() {
+        const Date = [2000,5,15]
+        let bar = checkLeapYear(Date);
+        expect(bar).toBe(true);
     });
 });
 describe("test main final result", function() {
