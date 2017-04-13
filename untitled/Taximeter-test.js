@@ -26,3 +26,39 @@ describe("test calculate Fare" , function () {
         expect(fare).toBe(3*0.8+6);
     });
 });
+describe("test main function" ,function () {
+    it("return input error when distance<0||time<0" ,function () {
+        let distance = -1;
+        let time = 10;
+        let result = taximeterFare(distance,time);
+        expect(result).toBe("input error");
+        distance = 10;
+        time = -10;
+        result = taximeterFare(distance,time);
+        expect(result).toBe("input error");
+        distance = -10;
+        time = -10;
+        result = taximeterFare(distance,time);
+        expect(result).toBe("input error");
+    });
+    it("return input error when distance||time not number" ,function () {
+        let distance = "not number";
+        let time = 10;
+        let result = taximeterFare(distance,time);
+        expect(result).toBe("input error");
+        distance = 10;
+        time = "not number";
+        result = taximeterFare(distance,time);
+        expect(result).toBe("input error");
+        distance = "not number";
+        time = "not number";
+        result = taximeterFare(distance,time);
+        expect(result).toBe("input error");
+    });
+    it("return result" ,function () {
+        const distance = 10;
+        const time = 10;
+        let result = taximeterFare(distance,time);
+        expect(result).toBe(16);
+    });
+})
