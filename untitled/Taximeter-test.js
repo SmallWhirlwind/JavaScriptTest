@@ -59,6 +59,6 @@ describe("test main function" ,function () {
         const distance = 10;
         const time = 10;
         let result = taximeterFare(distance,time);
-        expect(result).toBe(16);
+        expect(result).toBe("16");
     });
 })

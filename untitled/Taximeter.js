@@ -14,3 +14,12 @@ function calculateFare(distance) {
         return (distance-8)*1.2+6*0.8+6;
     }
 }
+function taximeterFare(distance,time) {
+    if(isNaN(distance)||isNaN(time)){
+        return "input error";
+    }
+    if(distance<0||time<0){
+        return "input error";
+    }
+    return (calculateFare(distance)+calculateParkingCost(time)).toFixed(0);
+}
