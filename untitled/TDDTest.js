@@ -9,16 +9,16 @@ describe("test input String", function() {
         checkvalidity(str);
         expect(console.log).toHaveBeenCalledWith('Date not number');
     });
-    it("should console 'Date not validity' when inputDate like 2008-4-31 ", function() {
+    it("should console odd number when string is odd number ", function() {
         spyOn(console, 'log');
-        const date = [2008,4,31];
-        checkvalidity(date,true);
-        expect(console.log).toHaveBeenCalledWith('Date not validity');
+        const str = "5";
+        checkvalidity(str);
+        expect(console.log).toHaveBeenCalledWith('Date is odd number');
     });
-    it("should console 'Date not validity' when inputDate like 2008-7-33 ", function() {
+    it("should console even number when string is even number ", function() {
         spyOn(console, 'log');
-        const date = [2008,7,33];
-        checkvalidity(date,true);
-        expect(console.log).toHaveBeenCalledWith('Date not validity');
+        const str = "4";
+        checkvalidity(str);
+        expect(console.log).toHaveBeenCalledWith('Date is even number');
     });
 });
