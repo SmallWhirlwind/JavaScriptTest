@@ -4,3 +4,6 @@
 function calculateParkingCost(stopTime) {
     return stopTime*0.25;
 }
+function calculateFare(distance) {
+    if()
+}
