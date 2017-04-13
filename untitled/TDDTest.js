@@ -21,10 +21,10 @@ describe("test input String", function() {
         checkInputString(str);
         expect(console.log).toHaveBeenCalledWith('Data is even number');
     });
-    it("should console even number when string is 0 ", function() {
+    it("should console it is number when string is float ", function() {
         spyOn(console, 'log');
-        const str = "0";
+        const str = "123.12";
         checkInputString(str);
-        expect(console.log).toHaveBeenCalledWith('Data is even number');
+        expect(console.log).toHaveBeenCalledWith('Data is number');
     });
 });

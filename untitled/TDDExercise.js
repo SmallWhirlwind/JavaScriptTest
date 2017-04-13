@@ -5,7 +5,7 @@ function checkInputString(inputString){
     if(isNaN(parseFloat(inputString))){
         console.log("Data not number");
     }else{
-        const num = parseInt(inputString);
+        const num = parseFloat(inputString);
         if(num%1>0){
             console.log("Data is number");
         }else if(num%2===0){
